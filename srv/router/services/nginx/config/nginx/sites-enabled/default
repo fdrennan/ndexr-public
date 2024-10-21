@@ -1,0 +1,29 @@
+# Define the upstream using ip_hash
+upstream ndexr_app {
+    ip_hash;
+    server localhost:9040;
+    server localhost:9041;
+    server localhost:9042;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name _;
+
+    location / {
+        # Proxy requests to the defined upstream
+        proxy_pass http://ndexr_app;
+        include conf.d/common_proxy.conf;
+    }
+
+    error_page 404 /custom_404.html;
+
+    location = /custom_404.html {
+        internal;
+        root /usr/share/nginx/html;
+    }
+
+    # Optionally, you can add more specific configurations as needed
+}

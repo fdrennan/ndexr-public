@@ -1,0 +1,38 @@
+{
+  "name": "rapp",
+  "version": "1.0.0",
+  "author": "Freddy Drennan",
+  "description": "",
+  "homepage": "https://gitlab.com/fdrennan/rapp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/fdrennan/rapp.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/fdrennan/rapp/issues"
+  },
+  "dependencies": {
+    "@fontsource/fira-code": "^5.0.18",
+    "@popperjs/core": "^2.11.6",
+    "@selectize/selectize": "^0.15.2",
+    "bootstrap": "^5.0.1",
+    "bootstrap-icons": "^1.11.3",
+    "bootswatch": "^5.2.3",
+    "d3": "^7.7.0",
+    "fast-geoip": "^1.1.88",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "js-cookie": "^3.0.1",
+    "npm": "^9.8.1",
+    "sass": "^1.59.3",
+    "selectize": "^0.12.6",
+    "selectize-plugin-a11y": "^1.1.0",
+    "yarn": "^1.22.19"
+  },
+  "scripts": {
+    "console": "make -C ../.. up profile=console",
+    "sass": "sass --style=compressed src/css/styles.scss src/css/styles.css",
+    "style": "R -e \"source('scripts/style.r')\""
+  }
+}

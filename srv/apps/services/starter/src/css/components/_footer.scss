@@ -1,0 +1,23 @@
+.footer {
+  background-color: #2f2f2f;
+  color: #f8f9fa;
+  font-size: 0.9rem;
+  width: 100%;
+}
+.footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer a:hover {
+  color: #00aaff;
+}
+.footer h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.footer p {
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+

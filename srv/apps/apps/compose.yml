@@ -1,0 +1,15 @@
+x-common-service-properties: &common-properties
+  restart: unless-stopped
+  env_file: ./env/.env.dev
+  build:
+    context: ./services/webapps
+
+services:
+  webapps:
+    <<: *common-properties
+    ports:
+      - "9040-9042:8000"
+    command:
+      - "R"
+      - "-e"
+      - "Sys.setenv(LIVE=TRUE);options(ndexr_site='ndexrio', docker=TRUE);shiny::runApp('/root/src')"

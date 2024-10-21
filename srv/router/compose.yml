@@ -1,0 +1,30 @@
+x-common-service-properties: &common-properties-dev
+  restart: always
+  env_file: ./env/.env.dev  # assuming you'd have a separate environment file for dev
+
+services:
+  nginx:
+    <<: *common-properties-dev
+    network_mode: host
+    build:
+      context: ./services/nginx
+    restart: unless-stopped    
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /srv/certbot/conf:/etc/letsencrypt
+      - /srv/certbot/www:/var/www/certbot
+
+  certbot:
+    container_name: certbot-certbot
+    image: certbot/certbot:latest
+    depends_on:
+      - nginx
+    command: >-
+             certonly --reinstall --webroot --webroot-path=/var/www/certbot
+             --email drennanfreddy@gmail.com --agree-tos --no-eff-email
+             -d ${DOMAIN:-carneproperties.com}
+    volumes:
+      - /srv/certbot/conf:/etc/letsencrypt
+      - /srv/certbot/www:/var/www/certbot

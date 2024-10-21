@@ -1,0 +1,262 @@
+// Importing necessary files and fonts
+@import "fonts"; // Custom fonts or other font configurations
+
+// Font definitions
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Lato', sans-serif;
+$font-code: 'Courier New', monospace;
+
+// Import Bootstrap functions first
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Custom color palette (SCSS variables)
+$primary: #3498db;    // Soft blue
+$secondary: #95a5a6;  // Soft grey
+$success: #2ecc71;    // Light green
+$info: #1abc9c;       // Soft teal
+$warning: #f1c40f;    // Soft yellow
+$danger: #e74c3c;     // Soft red
+$light: #ecf0f1;      // Very light grey
+$dark: #2c3e50;       // Dark blue-grey
+
+// Override Bootstrap's theme colors map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Override other Bootstrap variables if needed
+$body-bg: $light;     // Default background color
+$body-color: $dark;   // Default text color
+
+// Import Bootstrap variables and mixins
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Import Bootstrap core styles
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+:root {
+  /* Light Theme */
+  --bg-color: #f8f9fa;
+  --text-color: #34495e;
+  --navbar-bg-color: #ecf0f1;
+  --navbar-text-color: #2c3e50;
+  --sidebar-bg-color: #ecf0f1;
+  --sidebar-text-color: #2c3e50;
+  --footer-bg-color: #ecf0f1;
+  --footer-text-color: #2c3e50;
+  --footer-text-muted-color: #5D7D96;
+
+  /* Default light mode icon */
+  --icon-default: "\f186"; /* Font Awesome moon icon for light mode */
+}
+
+body.dark-theme {
+  /* Dark Theme */
+  --bg-color: #2c3e50;
+  --text-color: #ecf0f1;
+  --navbar-bg-color: #2c3e50;
+  --navbar-text-color: #ecf0f1;
+  --sidebar-bg-color: #2c3e50;
+  --sidebar-text-color: #ecf0f1;
+  --footer-bg-color: #2c3e50;
+  --footer-text-color: #ecf0f1;
+  --footer-text-muted-color: #ffffff;
+
+  /* Dark mode icon */
+  --icon-default: "\f185"; /* Font Awesome sun icon for dark mode */
+}
+
+/* Global application of the icon change for all FontAwesome icons */
+.fa::before {
+  content: var(--icon-default); /* Apply the theme icon globally */
+  color: var(--text-color);     /* Change icon color to match the text color */
+}
+
+// Body styles
+body {
+  font-family: $font-primary;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+
+  /* Replicating "d-flex flex-column min-vh-100" */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Navbar styling
+.navbar {
+  font-family: $font-secondary;
+  background-color: var(--navbar-bg-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+
+  .navbar-brand {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--navbar-text-color) !important;
+
+    &:hover {
+      color: $primary !important;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      content: "";
+      background-image: none;
+      font-family: "Font Awesome 5 Free"; /* Ensure Font Awesome is included */
+      font-weight: 900;
+      color: var(--navbar-text-color);
+      font-size: 1.2rem;
+      text-align: center;
+
+      /* Default icon (hamburger menu) */
+      &:before {
+        content: "\f0c9"; /* Font Awesome bars icon */
+      }
+    }
+
+    /* Change icon when menu is open */
+    &[aria-expanded="true"] {
+      .navbar-toggler-icon:before {
+        content: "\f00d"; /* Font Awesome times icon */
+      }
+    }
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar-nav {
+    margin-bottom: 0;
+    display: flex;
+    gap: 1rem;
+
+    .nav-item {
+      .nav-link {
+        color: var(--navbar-text-color) !important;
+
+        &:hover {
+          color: $primary !important;
+        }
+      }
+    }
+  }
+}
+
+// Sidebar styling (if applicable)
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+
+  .nav-link {
+    color: var(--sidebar-text-color);
+
+    &:hover {
+      background-color: $primary;
+      color: var(--sidebar-bg-color);
+    }
+  }
+}
+
+// Main content area
+main {
+  padding: 2rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-secondary;
+    color: $primary;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+// Buttons
+.btn {
+  font-family: $font-primary;
+
+  &.btn-primary {
+    background-color: $primary;
+    border-color: darken($primary, 10%);
+  }
+
+  &.btn-secondary {
+    background-color: $secondary;
+    border-color: darken($secondary, 10%);
+  }
+
+  &.btn-outline-secondary {
+    color: var(--navbar-text-color);
+    border-color: var(--navbar-text-color);
+
+    &:hover {
+      background-color: var(--navbar-text-color);
+      color: var(--navbar-bg-color);
+    }
+  }
+}
+
+// Footer styling
+.footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: auto; /* Replicating "mt-auto" */
+
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+    }
+  }
+
+  .text-muted {
+    color: var(--footer-text-muted-color) !important;
+  }
+}
+
+// Theme Toggle Button Styles
+button[id$="theme_toggle_btn"] {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+// Ensure full height layout
+html, body {
+  height: 100%;
+}
+
+// Include Bootstrap Icons if needed
+$bootstrap-icons-font-src: url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+                          url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+// Include Font Awesome if needed
+// Ensure Font Awesome is included in your project, either via npm or CDN

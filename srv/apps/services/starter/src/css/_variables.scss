@@ -1,0 +1,45 @@
+// _variables.scss
+
+// Color Variables - Modern Palette
+$primary: #4a90e2; // Softer Blue
+$secondary: #495057; // Neutral Dark Grey
+$success: #58a55c; // Calming Green
+$info: #5bc0de; // Light Teal
+$warning: #f7c948; // Warm Yellow
+$danger: #d9534f; // Mellow Red
+$light: #f0f2f5; // Soft Grey for backgrounds
+$dark: #2f2f2f; // Deep Charcoal for contrast
+
+// Font Variables
+$font-primary: 'Poppins', sans-serif; // Modern, clean font for headings
+$font-secondary: 'Roboto Mono', monospace; // Professional font for code and secondary elements
+
+// Override Bootstrap Font Variables
+$font-family-base: $font-primary;
+$font-family-monospace: $font-secondary;
+
+// Define Gradient Colors
+$primary-gradient-start: darken($primary, 10%);
+$primary-gradient-end: lighten($primary, 10%);
+
+// Update Bootstrap Color Variables
+$body-bg: #f8f9fa; // Base color for body background
+$body-color: #333333; // Dark Text for improved readability
+
+// Card Colors
+$card-bg: #ffffff; // Clean White
+
+$card-border-color: #dcdcdc; // Subtle Grey Border
+$card-header-bg: #e3e7ea; // Light Grey for header
+$card-footer-bg: #e3e7ea; // Consistent footer with header
+
+// General Layout Variables
+$border-radius: 0.375rem; // Smoother rounded corners
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Subtle shadow
+
+// Navigation Bar Colors
+$navbar-bg: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end); // Gradient Blue for Navigation Bar
+$navbar-color: #ffffff; // White Text
+$navbar-border-color: transparent; // No border for cleaner design
+$navbar-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Soft shadow
+

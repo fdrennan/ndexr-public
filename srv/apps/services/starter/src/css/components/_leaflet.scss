@@ -1,0 +1,8 @@
+// components/_leaflet.scss
+
+// Adjust border for Leaflet map container
+.leaflet-container {
+  border-radius: 10px;
+  border: 1px solid $card-border-color;
+}
+

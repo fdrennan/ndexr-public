@@ -1,0 +1,10 @@
+default:
+  cognito:
+    group_id: ""
+    group_name: ""
+    oauth_flow: ""
+    base_cognito_url: ""
+    app_client_id: ""
+    app_client_secret: ""
+    redirect_uri: ""
+    redirect_uri_logout: ""

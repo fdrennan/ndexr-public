@@ -1,0 +1,18 @@
+// components/_navbar.scss
+
+// Navbar Styling
+.navbar {
+  //background: $navbar-bg;
+  //color: $navbar-color;
+  box-shadow: $navbar-box-shadow;
+  border-bottom: $navbar-border-color;
+
+  .navbar-nav .nav-link {
+    //color: $navbar-color;
+
+    &:hover {
+      //color: lighten($navbar-color, 20%);
+    }
+  }
+}
+

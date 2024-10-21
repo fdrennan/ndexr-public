@@ -1,0 +1,13 @@
+// components/_tables.scss
+
+// Table Styling
+.table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-hover;
+  @extend .table-light;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid $card-border-color;
+}
+

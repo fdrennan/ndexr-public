@@ -1,0 +1,247 @@
+@import "fonts";
+
+$font-primary: 'Exo', sans-serif;
+$font-secondary: 'Orbitron', sans-serif;
+$font-code: 'Fira Code', monospace;
+
+// Bootstrap Icons
+$bootstrap-icons-font-src: url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+  url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Color variables
+$primary: #008fbf; /* Darker Cyan */
+$secondary: #282a36; /* Dark Grey */
+$success: #28a745; /* Green */
+$info: #17a2b8; /* Teal */
+$warning: #ffc107; /* Yellow */
+$danger: #dc3545; /* Red */
+$light: #343a40; /* Darker Grey for buttons and cards */
+$dark: #1e1e1e; /* Very Dark Grey for body background */
+$body-bg: #1e1e1e; /* Very Dark Grey */
+$body-color: #f8f9fa; /* Light Grey */
+
+// Button colors
+$btn-primary-bg: #008fbf;
+$btn-primary-border: #0077a3;
+$btn-secondary-bg: #282a36;
+$btn-secondary-border: #1c1e24;
+$btn-success-bg: #28a745;
+$btn-success-border: #218838;
+$btn-info-bg: #17a2b8;
+$btn-info-border: #138496;
+$btn-warning-bg: #ffc107;
+$btn-warning-border: #e0a800;
+$btn-danger-bg: #dc3545;
+$btn-danger-border: #c82333;
+$btn-light-bg: #343a40;
+$btn-light-border: #23272b;
+$btn-dark-bg: #1e1e1e;
+$btn-dark-border: #121212;
+
+// Card colors
+$card-bg: #2e2e2e; /* Dark Grey */
+$card-border-color: #008fbf; /* Darker Cyan */
+$card-header-bg: #008fbf; /* Darker Cyan */
+$card-footer-bg: #008fbf; /* Darker Cyan */
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  font-family: $font-primary;
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+// Heading Styling
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  color: $body-color;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+a {
+  color: $primary; // Set the default color of the link
+  text-decoration: none; // Remove underline
+
+  &:hover {
+    color: $info; // Set the hover color of the link
+    text-decoration: underline; // Optional: add underline on hover
+  }
+}
+
+code, .r {
+  font-family: 'Fira Code', monospace;
+  color: $info; // Adjust code color for better readability in dark mode
+}
+
+/* Custom CSS */
+.btn {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.mirror:hover {
+  transform: rotate(180deg);
+  display: inline-block; /* Ensure the span behaves like a block to allow transformation */
+  transition: transform 0.3s ease; /* Optional: Adds a smooth transition effect */
+}
+
+
+.container-fluid {
+  //@extend .mb-1;
+  //padding: 10px;
+  //margin-bottom: 10px;
+  //border: 1px solid #ddd;
+  //border-radius: 5px;
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  //background-color: $card-bg;
+}
+
+.container-separator {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: $card-bg;
+}
+
+.offcanvas-custom {
+  width: 90%; /* Change this value to your desired width */
+}
+
+
+.offcanvas-fullwidth {
+  width: 100% !important; /* Make the offcanvas full width */
+  height: 90% !important; /* Make the offcanvas 90% height */
+  max-width: none !important;
+  top: 0 !important; /* Position the offcanvas at the top of the page */
+}
+
+
+//.offcanvas-top {
+//  @extend .offcanvas-fullwidth;
+//  height: 95% !important; /* Make the offcanvas full width */
+//}
+
+ 
+// Button Hover and Active Effects
+.btn {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bouncing-emoji {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  font-size: 100px;
+  animation: bounce 2s infinite;
+}
+
+#TOC {
+    //position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    //background-color: #fff; /* Adjust background color as needed */
+    border-right: 1px solid #ddd; /* Optional border for better visual separation */
+    padding: 1em; /* Adjust padding as needed */
+    //width: 250px; /* Adjust width as needed */
+    //z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-hover;
+  @extend .table-light;
+  @extend .table-responsive;
+}
+
+
+.key-pair {
+        display: inline-block;
+        margin-right: 10px;
+}
+      
+      
+      
+.modal .modal-dialog {
+  max-width: 100%;
+  margin: 0;
+}
+
+.shiny-notification {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; // Adjust as needed
+  color: #fff; // Adjust as needed
+  padding: 10px;
+  z-index: 1000; // Ensure it's above other elements
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .shiny-notification-content-text {
+    flex-grow: 1;
+  }
+
+  .shiny-notification-content-action,
+  & > div:first-child {
+    display: none; // Hide the close button
+  }
+}
+
+.background-fire {
+    opacity: 0.5; /* Adjust transparency */
+    filter: hue-rotate(20deg) brightness(1.2) saturate(1.5); /* Adjust colors to make it warmer */
+    position: absolute; /* Ensure it's in the background */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place it behind other content */
+    width: 100%;
+    height: auto;
+}
+
+
+ 

@@ -1,0 +1,46 @@
+// components/_buttons.scss
+
+// Hover Effects for Dynamic Elements
+// Hover Effects for Dynamic Elements (if not already included elsewhere)
+.btn {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px; // Rounded corners
+}
+
+
+// Apply minimal gradient styles to each button type
+.btn-primary {
+  @include button-gradient($primary);
+}
+
+.btn-secondary {
+  @include button-gradient($secondary);
+}
+
+.btn-success {
+  @include button-gradient($success);
+}
+
+.btn-info {
+  @include button-gradient($info);
+}
+
+.btn-warning {
+  @include button-gradient($warning);
+  color: $dark; // Dark text for better contrast on light background
+}
+
+.btn-danger {
+  @include button-gradient($danger);
+}
+
+.btn-light {
+  @include button-gradient($light);
+  color: $dark; // Dark text for contrast
+}
+
+.btn-dark {
+  @include button-gradient($dark);
+}
+

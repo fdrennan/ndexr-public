@@ -1,0 +1,27 @@
+x-common-service-properties: &common-properties
+  restart: unless-stopped
+  env_file: ./env/.env.dev
+
+
+services:
+  webapps:
+    <<: *common-properties
+    build:
+      context: ./services/webapps    
+    ports:
+      - "9040-9042:8000"
+    command:
+      - "R"
+      - "-e"
+      - "Sys.setenv(LIVE=TRUE);options(ndexr_site='ndexrio', docker=TRUE);shiny::runApp('/root/src')"
+
+
+  postgres:
+    restart: unless-stopped
+    env_file: ./env/.env.dev
+    build:
+      context: ./services/postgres
+    volumes:
+      - "/srv/ndexr/dev/postgres/data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"

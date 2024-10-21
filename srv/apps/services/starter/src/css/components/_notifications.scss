@@ -1,0 +1,44 @@
+// components/_notifications.scss
+
+// Custom Shiny Notification
+.shiny-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: auto;
+  max-width: 700px;
+  min-width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  //backdrop-filter: blur(10px);
+  color: $dark;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  .shiny-notification-content-text {
+    flex-grow: 1;
+    margin-right: 8px;
+    font-family: $font-primary;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .shiny-notification-content-action,
+  & > div:first-child {
+    display: none;
+  }
+
+  &:hover {
+    //opacity: 1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+

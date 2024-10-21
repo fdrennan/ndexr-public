@@ -1,0 +1,21 @@
+// components/_forms.scss
+
+// Input Styling
+.form-control,
+.selectize-control .selectize-input {
+  border-radius: 8px;
+  border: 1px solid $secondary;
+  transition: border-color 0.3s ease;
+
+  &:focus,
+  &.focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+  }
+}
+
+.selectize-control .selectize-dropdown {
+  border-radius: 8px;
+  border: 1px solid $secondary;
+}
+

@@ -1,0 +1,53 @@
+// _mixins.scss
+
+// Mixin for Gradient Backgrounds
+@mixin gradient-bg($color) {
+  background: linear-gradient(to right, $color, lighten($color, 10%));
+}
+
+// Mixin for Minimal Gradient Button Styles
+@mixin button-gradient($color) {
+  background: linear-gradient(to right, $color, lighten($color, 2%)); // Very subtle gradient
+  color: #fff;
+  border: none;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(to right, lighten($color, 2%), lighten($color, 4%)); // Slightly lighter on hover
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background: linear-gradient(to right, darken($color, 2%), darken($color, 4%)); // Slightly darker when active
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(1px);
+  }
+}
+
+// Mixin for Nav Link Styles
+@mixin nav-link-styles {
+  margin: 0;
+  padding: 0.2rem 0.5rem;
+  font-family: $font-primary;
+  font-size: 0.8rem;
+  //color: $dark;
+  //background-color: $light;
+  border-radius: 0.15rem;
+  border: none;
+  transition: color 0.2s, background-color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: $primary;
+    //background-color: lighten($primary, 35%);
+  }
+
+  &.active {
+    //color: $light;
+    //background-color: $primary;
+    border-radius: 0.15rem;
+  }
+}
+
